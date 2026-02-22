@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pranav Verse - Student Project Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <!-- Particle Canvas -->
+    <canvas id="particleCanvas"></canvas>
+
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader-container">
+            <div class="loader-cube">
+                <div class="cube-face front">P</div>
+                <div class="cube-face back">V</div>
+                <div class="cube-face right">⚡</div>
+                <div class="cube-face left">🚀</div>
+                <div class="cube-face top">💻</div>
+                <div class="cube-face bottom">⭐</div>
+            </div>
+            <div class="loader-text">
+                <span>P</span><span>R</span><span>A</span><span>N</span><span>A</span><span>V</span>
+                <span>&nbsp;</span>
+                <span>V</span><span>E</span><span>R</span><span>S</span><span>E</span>
+            </div>
+            <div class="loader-bar">
+                <div class="loader-progress" id="loaderProgress"></div>
+            </div>
+            <p class="loader-subtitle">Initializing the Universe...</p>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#" class="nav-logo">
+                <div class="logo-3d">
+                    <span class="logo-text">PRANAV</span>
+                    <span class="logo-highlight">VERSE</span>
+                </div>
+                <div class="logo-orbit">
+                    <div class="orbit-ring"></div>
+                    <div class="orbit-dot"></div>
+                </div>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="nav-link active" data-section="home">
+                    <i class="fas fa-home"></i><span>Home</span>
+                </a></li>
+                <li><a href="#projects" class="nav-link" data-section="projects">
+                    <i class="fas fa-code"></i><span>Projects</span>
+                </a></li>
+                <li><a href="#categories" class="nav-link" data-section="categories">
+                    <i class="fas fa-layer-group"></i><span>Categories</span>
+                </a></li>
+                <li><a href="#features" class="nav-link" data-section="features">
+                    <i class="fas fa-star"></i><span>Features</span>
+                </a></li>
+                <li><a href="#testimonials" class="nav-link" data-section="testimonials">
+                    <i class="fas fa-users"></i><span>Reviews</span>
+                </a></li>
+                <li><a href="#contact" class="nav-link" data-section="contact">
+                    <i class="fas fa-envelope"></i><span>Contact</span>
+                </a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="nav-cta">
+                    <span>Get Started</span>
+                    <i class="fas fa-rocket"></i>
+                </button>
+            </div>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+                <div class="shape shape-5"></div>
+                <div class="shape shape-6"></div>
+            </div>
+            <div class="grid-bg"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-badge animate-on-scroll">
+                <i class="fas fa-bolt"></i>
+                <span>Welcome to the Future of Learning</span>
+            </div>
+            <h1 class="hero-title animate-on-scroll">
+                <span class="title-line">Welcome to</span>
+                <span class="title-main">
+                    <span class="title-3d">PRANAV</span>
+                    <span class="title-verse">VERSE</span>
+                </span>
+                <span class="title-sub">Your Ultimate Student Project Hub</span>
+            </h1>
+            <p class="hero-description animate-on-scroll">
+                Explore, Download & Build amazing projects. Access 500+ source codes
+                across Web, Mobile, AI/ML, and more. Your coding journey starts here! 🚀
+            </p>
+            <div class="hero-stats animate-on-scroll">
+                <div class="stat-item">
+                    <div class="stat-number" data-count="500">0</div>
+                    <div class="stat-label">Projects</div>
+                    <div class="stat-icon"><i class="fas fa-project-diagram"></i></div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="10000">0</div>
+                    <div class="stat-label">Downloads</div>
+                    <div class="stat-icon"><i class="fas fa-download"></i></div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="2500">0</div>
+                    <div class="stat-label">Students</div>
+                    <div class="stat-icon"><i class="fas fa-user-graduate"></i></div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number" data-count="50">0</div>
+                    <div class="stat-label">Categories</div>
+                    <div class="stat-icon"><i class="fas fa-th-large"></i></div>
+                </div>
+            </div>
+            <div class="hero-buttons animate-on-scroll">
+                <a href="#projects" class="btn btn-primary">
+                    <span>Explore Projects</span>
+                    <i class="fas fa-arrow-right"></i>
+                    <div class="btn-glow"></div>
+                </a>
+                <a href="#categories" class="btn btn-secondary">
+                    <span>Browse Categories</span>
+                    <i class="fas fa-th-large"></i>
+                </a>
+            </div>
+            <div class="hero-scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <span>Scroll to Explore</span>
+            </div>
+        </div>
+        <div class="hero-3d-element">
+            <div class="floating-code">
+                <pre><code>&lt;div class="pranav-verse"&gt;
+  &lt;h1&gt;Hello World!&lt;/h1&gt;
+  &lt;p&gt;Start coding today&lt;/p&gt;
+  &lt;button&gt;Download&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section" id="search">
+        <div class="container">
+            <div class="search-wrapper animate-on-scroll">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="searchInput" placeholder="Search projects, languages, categories...">
+                    <button class="search-btn">
+                        <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+                <div class="search-tags">
+                    <span class="tag" onclick="searchTag('HTML CSS')">HTML/CSS</span>
+                    <span class="tag" onclick="searchTag('JavaScript')">JavaScript</span>
+                    <span class="tag" onclick="searchTag('Python')">Python</span>
+                    <span class="tag" onclick="searchTag('React')">React</span>
+                    <span class="tag" onclick="searchTag('Machine Learning')">ML/AI</span>
+                    <span class="tag" onclick="searchTag('Flutter')">Flutter</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects-section" id="projects">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge">
+                    <i class="fas fa-fire"></i>
+                    <span>Trending Now</span>
+                </div>
+                <h2 class="section-title">
+                    <span>Featured</span> Projects
+                </h2>
+                <p class="section-subtitle">
+                    Discover our most popular projects loved by students worldwide
+                </p>
+            </div>
+
+            <!-- Filter Tabs -->
+            <div class="filter-tabs animate-on-scroll">
+                <button class="filter-btn active" data-filter="all">
+                    <i class="fas fa-globe"></i> All
+                </button>
+                <button class="filter-btn" data-filter="web">
+                    <i class="fas fa-code"></i> Web Dev
+                </button>
+                <button class="filter-btn" data-filter="mobile">
+                    <i class="fas fa-mobile-alt"></i> Mobile
+                </button>
+                <button class="filter-btn" data-filter="ai">
+                    <i class="fas fa-brain"></i> AI/ML
+                </button>
+                <button class="filter-btn" data-filter="python">
+                    <i class="fab fa-python"></i> Python
+                </button>
+                <button class="filter-btn" data-filter="game">
+                    <i class="fas fa-gamepad"></i> Games
+                </button>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="projects-grid" id="projectsGrid">
+
+                <!-- Card 1 -->
+                <div class="project-card animate-on-scroll" data-category="web">
+                    <div class="card-3d-wrapper">
+                        <div class="card-glow"></div>
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-shopping-cart"></i></div>
+                            <div class="card-badges">
+                                <span class="badge hot">🔥 Hot</span>
+                                <span class="badge free">Free</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">E-Commerce Website</h3>
+                            <p class="card-description">Full-stack e-commerce platform with cart, payment gateway, admin panel & responsive design.</p>
+                            <div class="card-tech">
+                                <span>React</span><span>Node.js</span><span>MongoDB</span><span>Stripe</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-stats">
+                                <span><i class="fas fa-download"></i> 1.2k</span>
+                                <span><i class="fas fa-star"></i> 4.8</span>
+                                <span><i class="fas fa-eye"></i> 3.5k</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn-preview" onclick="openPreview('E-Commerce Website')">
+                                    <i class="fas fa-eye"></i> Preview
+                                </button>
+                                <button class="btn-download" onclick="downloadProject('E-Commerce Website')">
+                                    <i class="fas fa-download"></i> Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="project-card animate-on-scroll" data-category="ai">
+                    <div class="card-3d-wrapper">
+                        <div class="card-glow"></div>
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-robot"></i></div>
+                            <div class="card-badges">
+                                <span class="badge trending">📈 Trending</span>
+                                <span class="badge free">Free</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">AI Chatbot Assistant</h3>
+                            <p class="card-description">Intelligent chatbot using NLP with context-aware responses and learning capabilities.</p>
+                            <div class="card-tech">
+                                <span>Python</span><span>TensorFlow</span><span>Flask</span><span>NLP</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-stats">
+                                <span><i class="fas fa-download"></i> 2.1k</span>
+                                <span><i class="fas fa-star"></i> 4.9</span>
+                                <span><i class="fas fa-eye"></i> 5.2k</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn-preview" onclick="openPreview('AI Chatbot')">
+                                    <i class="fas fa-eye"></i> Preview
+                                </button>
+                                <button class="btn-download" onclick="downloadProject('AI Chatbot')">
+                                    <i class="fas fa-download"></i> Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="project-card animate-on-scroll" data-category="mobile">
+                    <div class="card-3d-wrapper">
+                        <div class="card-glow"></div>
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-heartbeat"></i></div>
+                            <div class="card-badges">
+                                <span class="badge new">✨ New</span>
+                                <span class="badge free">Free</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Health Tracker App</h3>
+                            <p class="card-description">Mobile app for tracking fitness, calories, sleep patterns with beautiful charts.</p>
+                            <div class="card-tech">
+                                <span>Flutter</span><span>Dart</span><span>Firebase</span><span>Charts</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-stats">
+                                <span><i class="fas fa-download"></i> 890</span>
+                                <span><i class="fas fa-star"></i> 4.7</span>
+                                <span><i class="fas fa-eye"></i> 2.1k</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn-preview" onclick="openPreview('Health Tracker')">
+                                    <i class="fas fa-eye"></i> Preview
+                                </button>
+                                <button class="btn-download" onclick="downloadProject('Health Tracker')">
+                                    <i class="fas fa-download"></i> Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 4 -->
+                <div class="project-card animate-on-scroll" data-category="python">
+                    <div class="card-3d-wrapper">
+                        <div class="card-glow"></div>
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-chart-line"></i></div>
+                            <div class="card-badges">
+                                <span class="badge popular">⭐ Popular</span>
+                                <span class="badge free">Free</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Data Visualization Dashboard</h3>
+                            <p class="card-description">Interactive dashboard with real-time data visualization, filters & export features.</p>
+                            <div class="card-tech">
+                                <span>Python</span><span>Plotly</span><span>Dash</span><span>Pandas</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-stats">
+                                <span><i class="fas fa-download"></i> 980</span>
+                                <span><i class="fas fa-star"></i> 4.5</span>
+                                <span><i class="fas fa-eye"></i> 2.8k</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn-preview" onclick="openPreview('Data Dashboard')">
+                                    <i class="fas fa-eye"></i> Preview
+                                </button>
+                                <button class="btn-download" onclick="downloadProject('Data Dashboard')">
+                                    <i class="fas fa-download"></i> Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 5 -->
+                <div class="project-card animate-on-scroll" data-category="game">
+                    <div class="card-3d-wrapper">
+                        <div class="card-glow"></div>
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-gamepad"></i></div>
+                            <div class="card-badges">
+                                <span class="badge hot">🔥 Hot</span>
+                                <span class="badge free">Free</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">3D Space Shooter Game</h3>
+                            <p class="card-description">Exciting 3D space shooter with particle effects, power-ups & multiplayer support.</p>
+                            <div class="card-tech">
+                                <span>Three.js</span><span>WebGL</span><span>Socket.io</span><span>Node.js</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-stats">
+                                <span><i class="fas fa-download"></i> 1.8k</span>
+                                <span><i class="fas fa-star"></i> 4.9</span>
+                                <span><i class="fas fa-eye"></i> 6.1k</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn-preview" onclick="openPreview('Space Shooter')">
+                                    <i class="fas fa-eye"></i> Preview
+                                </button>
+                                <button class="btn-download" onclick="downloadProject('Space Shooter')">
+                                    <i class="fas fa-download"></i> Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Card 6 -->
+                <div class="project-card animate-on-scroll" data-category="web">
+                    <div class="card-3d-wrapper">
+                        <div class="card-glow"></div>
+                        <div class="card-header">
+                            <div class="card-icon"><i class="fas fa-blog"></i></div>
+                            <div class="card-badges">
+                                <span class="badge new">✨ New</span>
+                                <span class="badge free">Free</span>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <h3 class="card-title">Blog Platform CMS</h3>
+                            <p class="card-description">Complete blogging platform with rich text editor, comments & SEO optimization.</p>
+                            <div class="card-tech">
+                                <span>Next.js</span><span>Prisma</span><span>PostgreSQL</span><span>Tailwind</span>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="card-stats">
+                                <span><i class="fas fa-download"></i> 1.5k</span>
+                                <span><i class="fas fa-star"></i> 4.6</span>
+                                <span><i class="fas fa-eye"></i> 4.0k</span>
+                            </div>
+                            <div class="card-actions">
+                                <button class="btn-preview" onclick="openPreview('Blog CMS')">
+                                    <i class="fas fa-eye"></i> Preview
+                                </button>
+                                <button class="btn-download" onclick="downloadProject('Blog CMS')">
+                                    <i class="fas fa-download"></i> Download
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="load-more animate-on-scroll">
+                <button class="btn btn-primary" onclick="loadMoreProjects()">
+                    <span>Load More Projects</span>
+                    <i class="fas fa-plus"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section" id="categories">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge">
+                    <i class="fas fa-layer-group"></i>
+                    <span>Browse By</span>
+                </div>
+                <h2 class="section-title"><span>Project</span> Categories</h2>
+                <p class="section-subtitle">Find the perfect project from our diverse collection</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card animate-on-scroll" style="--delay:0.1s">
+                    <div class="category-icon"><i class="fab fa-html5"></i><div class="icon-bg"></div></div>
+                    <h3>HTML/CSS</h3><p>85+ Projects</p>
+                    <div class="category-hover-content"><span>Landing Pages, Portfolios, Animations</span></div>
+                </div>
+                <div class="category-card animate-on-scroll" style="--delay:0.2s">
+                    <div class="category-icon"><i class="fab fa-js-square"></i><div class="icon-bg"></div></div>
+                    <h3>JavaScript</h3><p>120+ Projects</p>
+                    <div class="category-hover-content"><span>Games, Tools, Interactive Apps</span></div>
+                </div>
+                <div class="category-card animate-on-scroll" style="--delay:0.3s">
+                    <div class="category-icon"><i class="fab fa-react"></i><div class="icon-bg"></div></div>
+                    <h3>React</h3><p>75+ Projects</p>
+                    <div class="category-hover-content"><span>SPAs, Dashboards, E-commerce</span></div>
+                </div>
+                <div class="category-card animate-on-scroll" style="--delay:0.4s">
+                    <div class="category-icon"><i class="fab fa-python"></i><div class="icon-bg"></div></div>
+                    <h3>Python</h3><p>95+ Projects</p>
+                    <div class="category-hover-content"><span>Automation, Scraping, GUI Apps</span></div>
+                </div>
+                <div class="category-card animate-on-scroll" style="--delay:0.5s">
+                    <div class="category-icon"><i class="fas fa-brain"></i><div class="icon-bg"></div></div>
+                    <h3>AI / ML</h3><p>45+ Projects</p>
+                    <div class="category-hover-content"><span>NLP, Computer Vision, Prediction</span></div>
+                </div>
+                <div class="category-card animate-on-scroll" style="--delay:0.6s">
+                    <div class="category-icon"><i class="fas fa-mobile-alt"></i><div class="icon-bg"></div></div>
+                    <h3>Mobile Apps</h3><p>60+ Projects</p>
+                    <div class="category-hover-content"><span>Flutter, React Native, Android</span></div>
+                </div>
+                <div class="category-card animate-on-scroll" style="--delay:0.7s">
+                    <div class="category-icon"><i class="fab fa-java"></i><div class="icon-bg"></div></div>
+                    <h3>Java</h3><p>55+ Projects</p>
+                    <div class="category-hover-content"><span>Spring Boot, Desktop, APIs</span></div>
+                </div>
+                <div class="category-card animate-on-scroll" style="--delay:0.8s">
+                    <div class="category-icon"><i class="fas fa-gamepad"></i><div class="icon-bg"></div></div>
+                    <h3>Game Dev</h3><p>35+ Projects</p>
+                    <div class="category-hover-content"><span>Unity, Phaser, Three.js Games</span></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section" id="features">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge"><i class="fas fa-gem"></i><span>Why Choose Us</span></div>
+                <h2 class="section-title"><span>Amazing</span> Features</h2>
+                <p class="section-subtitle">Everything you need to supercharge your learning</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card animate-on-scroll" style="--delay:0.1s">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon"><i class="fas fa-download"></i></div>
+                        <div class="feature-ring"></div>
+                    </div>
+                    <h3>Instant Download</h3>
+                    <p>Download complete source code with one click. No sign-up walls or waiting.</p>
+                </div>
+                <div class="feature-card animate-on-scroll" style="--delay:0.2s">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon"><i class="fas fa-book-open"></i></div>
+                        <div class="feature-ring"></div>
+                    </div>
+                    <h3>Documentation</h3>
+                    <p>Every project comes with detailed documentation, setup guide & explanations.</p>
+                </div>
+                <div class="feature-card animate-on-scroll" style="--delay:0.3s">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon"><i class="fas fa-video"></i></div>
+                        <div class="feature-ring"></div>
+                    </div>
+                    <h3>Video Tutorials</h3>
+                    <p>Step-by-step video tutorials to help you understand and build from scratch.</p>
+                </div>
+                <div class="feature-card animate-on-scroll" style="--delay:0.4s">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon"><i class="fas fa-sync-alt"></i></div>
+                        <div class="feature-ring"></div>
+                    </div>
+                    <h3>Regular Updates</h3>
+                    <p>New projects added weekly. Stay updated with latest technologies and trends.</p>
+                </div>
+                <div class="feature-card animate-on-scroll" style="--delay:0.5s">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon"><i class="fas fa-headset"></i></div>
+                        <div class="feature-ring"></div>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Got stuck? Our community and support team are always here to help.</p>
+                </div>
+                <div class="feature-card animate-on-scroll" style="--delay:0.6s">
+                    <div class="feature-icon-wrapper">
+                        <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                        <div class="feature-ring"></div>
+                    </div>
+                    <h3>Clean Code</h3>
+                    <p>Well-structured, commented, following best practices. Learn proper standards.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works" id="howItWorks">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge"><i class="fas fa-route"></i><span>Simple Steps</span></div>
+                <h2 class="section-title"><span>How It</span> Works</h2>
+            </div>
+            <div class="steps-container">
+                <div class="step-line"></div>
+                <div class="step animate-on-scroll" style="--delay:0.1s">
+                    <div class="step-number">01</div>
+                    <div class="step-content">
+                        <div class="step-icon"><i class="fas fa-search"></i></div>
+                        <h3>Browse & Search</h3>
+                        <p>Explore our vast collection or search for specific projects.</p>
+                    </div>
+                </div>
+                <div class="step animate-on-scroll" style="--delay:0.3s">
+                    <div class="step-number">02</div>
+                    <div class="step-content">
+                        <div class="step-icon"><i class="fas fa-eye"></i></div>
+                        <h3>Preview Project</h3>
+                        <p>Check live preview, screenshots, and docs before downloading.</p>
+                    </div>
+                </div>
+                <div class="step animate-on-scroll" style="--delay:0.5s">
+                    <div class="step-number">03</div>
+                    <div class="step-content">
+                        <div class="step-icon"><i class="fas fa-download"></i></div>
+                        <h3>Download Code</h3>
+                        <p>Get the complete source code with assets & setup instructions.</p>
+                    </div>
+                </div>
+                <div class="step animate-on-scroll" style="--delay:0.7s">
+                    <div class="step-number">04</div>
+                    <div class="step-content">
+                        <div class="step-icon"><i class="fas fa-rocket"></i></div>
+                        <h3>Build & Learn</h3>
+                        <p>Customize, modify, and learn. Make it your own masterpiece!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials-section" id="testimonials">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge"><i class="fas fa-heart"></i><span>Loved by Students</span></div>
+                <h2 class="section-title"><span>Student</span> Reviews</h2>
+            </div>
+            <div class="testimonials-slider" id="testimonialSlider">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p>"Pranav Verse saved my semester! Found the exact project with clean, well-documented code. Amazing! 🎉"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">👨‍🎓</div>
+                            <div class="author-info"><h4>Rahul Sharma</h4><span>B.Tech CSE, 3rd Year</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p>"Best resource for student projects! Code quality is excellent and tutorials helped me understand every line. 💯"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">👩‍💻</div>
+                            <div class="author-info"><h4>Priya Patel</h4><span>MCA, 2nd Year</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p>"I learned React from the e-commerce project here. The code structure is professional-level. Thank you! 🚀"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">👨‍💻</div>
+                            <div class="author-info"><h4>Arjun Kumar</h4><span>B.Sc IT, Final Year</span></div>
+                        </div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="testimonial-stars">★★★★★</div>
+                        <p>"Finally a platform with free, quality source code! The AI projects collection is mind-blowing. 🔥"</p>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">👩‍🎓</div>
+                            <div class="author-info"><h4>Sneha Reddy</h4><span>B.Tech AI/ML, 4th Year</span></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="slider-controls">
+                    <button class="slider-btn prev" onclick="slideTestimonials(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <div class="slider-dots" id="sliderDots"></div>
+                    <button class="slider-btn next" onclick="slideTestimonials(1)"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="cta">
+        <div class="cta-bg">
+            <div class="cta-orb cta-orb-1"></div>
+            <div class="cta-orb cta-orb-2"></div>
+            <div class="cta-orb cta-orb-3"></div>
+        </div>
+        <div class="container">
+            <div class="cta-content animate-on-scroll">
+                <h2>Ready to Start Building? 🚀</h2>
+                <p>Join 2,500+ students already learning and building amazing projects.</p>
+                <div class="cta-form">
+                    <input type="email" placeholder="Enter your email address" id="emailInput">
+                    <button class="btn btn-primary" onclick="subscribe()">
+                        <span>Subscribe</span><i class="fas fa-paper-plane"></i>
+                    </button>
+                </div>
+                <div class="cta-features">
+                    <span><i class="fas fa-check-circle"></i> Free Access</span>
+                    <span><i class="fas fa-check-circle"></i> Weekly Updates</span>
+                    <span><i class="fas fa-check-circle"></i> No Spam</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <div class="section-header animate-on-scroll">
+                <div class="section-badge"><i class="fas fa-envelope"></i><span>Get In Touch</span></div>
+                <h2 class="section-title"><span>Contact</span> Us</h2>
+            </div>
+            <div class="contact-grid">
+                <div class="contact-info animate-on-scroll">
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                        <div><h4>Email Us</h4><p>hello@pranavverse.com</p></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+                        <div><h4>Location</h4><p>India 🇮🇳</p></div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                        <div><h4>Call Us</h4><p>+91 98765 43210</p></div>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <form class="contact-form animate-on-scroll" id="contactForm" onsubmit="submitContact(event)">
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="form-group">
+                        <select required>
+                            <option value="">Select Subject</option>
+                            <option>Project Request</option>
+                            <option>Bug Report</option>
+                            <option>Collaboration</option>
+                            <option>Other</option>
+                        </select>
+                        <i class="fas fa-tag"></i>
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" rows="5" required></textarea>
+                        <i class="fas fa-comment"></i>
+                    </div>
+                    <button type="submit" class="btn btn-primary">
+                        <span>Send Message</span><i class="fas fa-paper-plane"></i>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-wave">
+            <svg viewBox="0 0 1440 100" preserveAspectRatio="none">
+                <path d="M0,50 C150,100 350,0 500,50 C650,100 850,0 1000,50 C1150,100 1350,0 1440,50 L1440,100 L0,100 Z"></path>
+            </svg>
+        </div>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <span class="logo-text">PRANAV</span>
+                        <span class="logo-highlight">VERSE</span>
+                    </div>
+                    <p>Your ultimate destination for student projects and source code. Learn, Build, and Grow! 🚀</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-github"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#projects">Projects</a></li>
+                        <li><a href="#categories">Categories</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Categories</h4>
+                    <ul>
+                        <li><a href="#">Web Development</a></li>
+                        <li><a href="#">Mobile Apps</a></li>
+                        <li><a href="#">AI / Machine Learning</a></li>
+                        <li><a href="#">Python Projects</a></li>
+                        <li><a href="#">Game Development</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Documentation</a></li>
+                        <li><a href="#">Report Issue</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Pranav Verse. All rights reserved. Made with ❤️ for Students.</p>
+                <div class="back-to-top" onclick="scrollToTop()">
+                    <i class="fas fa-arrow-up"></i>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Download Modal -->
+    <div class="modal" id="downloadModal">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()"><i class="fas fa-times"></i></button>
+            <div class="modal-icon"><i class="fas fa-download"></i></div>
+            <h2 id="modalTitle">Downloading...</h2>
+            <p id="modalText">Your project source code is being prepared.</p>
+            <div class="modal-progress">
+                <div class="modal-progress-bar" id="modalProgress"></div>
+            </div>
+            <p class="modal-status" id="modalStatus">Preparing files...</p>
+        </div>
+    </div>
+
+    <!-- Toast Container -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
